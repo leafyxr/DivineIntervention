@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - Destructable
+  - CameraTarget
+  - EventMenu
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Floor
+  - Ground
+  - Items
+  - Collisions
+  - Above
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 3376859989
+    locked: 0
+  - name: Ground
+    uniqueID: 2968025185
+    locked: 0
+  - name: Items
+    uniqueID: 150244301
+    locked: 0
+  - name: Player
+    uniqueID: 1784483503
+    locked: 0
+  - name: Collisions
+    uniqueID: 4046308193
+    locked: 0
+  - name: Above
+    uniqueID: 2652291885
+    locked: 0
