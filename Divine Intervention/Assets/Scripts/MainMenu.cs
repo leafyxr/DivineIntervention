@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour {
     [SerializeField]
     private GameObject titleScreen;
     public bool showtitle = true;
+    [SerializeField]
+    Text GoldCount;
     // Use this for initialization
     void Start () {
 
@@ -23,6 +25,10 @@ public class MainMenu : MonoBehaviour {
                 showtitle = false;
                 titleScreen.SetActive(showtitle);
             }
+        }
+        if (GoldCount != null)
+        {
+            GoldCount.text = FindObjectOfType<DataManager>().GetComponent<DataManager>().data.Gold.ToString();
         }
     }
     public void StartButton()

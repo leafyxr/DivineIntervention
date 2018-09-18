@@ -4,12 +4,12 @@ using UnityEngine;
 [System.Serializable]
 
 public class Stats{
-    public string Name;
-    public int MeleePower;
-    public int RangedPower;
-    public int Health;
-    public int Magic;
-    public int MagicUse;
-    public int Resistance;
-    public float Speed;
+    public string Name = "Player";
+    public int MeleePower = 100;
+    public int RangedPower = 50;
+    public int Health = 100;
+    public int Magic = 100;
+    public int MagicUse = 20;
+    public int Resistance = 15;
+    public float Speed = 4;
 }
