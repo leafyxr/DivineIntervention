@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
-    public float Speed = 3;
     private Rigidbody2D playerBody;
     private Animator animator;
     [SerializeField]
     private ManaBar mana;
     private GameObject menu;
-    public int ManaGain = 20;
-    public int DamageDealt = 1;
+    [SerializeField]
+    private Text ScoreText;
     public bool paused = false;
-    private int enemiesKilled = 0;
+    private int iScore = 0;
+    [SerializeField]
+    public Stats Playerstats;
+    public int ManaGain = 10;
 	// Use this for initialization
 	void Start () {
         Time.timeScale = 1;
@@ -47,7 +50,7 @@ public class PlayerController : MonoBehaviour {
         {
             
         }
-        playerBody.velocity = new Vector2(Input.GetAxis("Horizontal") * Speed, Input.GetAxis("Vertical") * Speed);
+        playerBody.velocity = new Vector2(Input.GetAxis("Horizontal") * Playerstats.Speed, Input.GetAxis("Vertical") * Playerstats.Speed);
         if (Input.GetButtonDown("Melee"))
         {
             MeleeAttack();
@@ -64,7 +67,17 @@ public class PlayerController : MonoBehaviour {
     public void EndGame()
     {
         menu.SetActive(true);
-        menu.GetComponent<EventBox>().gameOver(enemiesKilled);
+        menu.GetComponent<EventBox>().gameOver(iScore);
+    }
+
+    public void addScore(int Score)
+    {
+        iScore += Score;
+        if (ScoreText != null)
+        {
+            ScoreText.text = iScore.ToString();
+        }
+        return;
     }
 
 
@@ -88,11 +101,10 @@ public class PlayerController : MonoBehaviour {
             if (collider.gameObject.CompareTag("Enemy"))
             {
                 mana.recoverMana(ManaGain);
-                if (collider.gameObject.GetComponent<MeleeEnemy>().takeDamage(DamageDealt))
+                if (collider.gameObject.GetComponent<MeleeEnemy>().takeDamage(Playerstats.MeleePower))
                 {
                     Debug.Log("Enemy Killed");
-                    enemiesKilled++;
-                    return;
+                    addScore(1);
                 }
                 return;
             }

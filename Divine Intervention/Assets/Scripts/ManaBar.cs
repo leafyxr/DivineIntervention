@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class ManaBar : MonoBehaviour {
     [SerializeField]
-    private int maxMana = 100;
+    private int maxMana;
     [SerializeField]
     RectTransform manaBar;
     private int currentMana;
     private float BarSize;
 
 	void Start () {
+        maxMana = FindObjectOfType<PlayerController>().Playerstats.Magic;
         currentMana = maxMana;
         BarSize = manaBar.sizeDelta.x;
 	}

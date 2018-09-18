@@ -7,20 +7,19 @@ public class MeleeEnemy : MonoBehaviour {
     [SerializeField]
     private HealthBar playerhealth;
     private Rigidbody2D body;
-    public int DamageDealt = 10;
     [SerializeField]
-    private int maxHealth = 5;
-    [SerializeField]
-    private float speed = 2;
+    private Stats enemyStats;
     private int currentHealth;
     [SerializeField]
     private GameObject blood;
     [SerializeField]
     private float attackDelay = 1;
+    [SerializeField]
+    private float FollowDistance = 10;
     private float clock = 0;
 	// Use this for initialization
 	void Start () {
-        currentHealth = maxHealth;
+        currentHealth = enemyStats.Health;
         player = GameObject.FindGameObjectWithTag("Player");
         body = GetComponent<Rigidbody2D>();
         playerhealth = GameObject.FindObjectOfType<HealthBar>();
@@ -39,14 +38,17 @@ public class MeleeEnemy : MonoBehaviour {
         Vector2 target = player.GetComponent<Transform>().position;
         Vector2 currentPos = transform.position;
         Vector2 direction = target - currentPos;
-        direction.Normalize();
-        body.velocity = (direction * speed);
-        transform.rotation = Quaternion.LookRotation(Vector3.forward, body.velocity);
+        if (Mathf.Abs(Vector2.Distance(transform.position, target)) < FollowDistance){
+            direction.Normalize();
+            body.velocity = (direction * enemyStats.Speed);
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, body.velocity);
+        }
+
     }
 
     public bool takeDamage(int DamageTaken)
     {
-        currentHealth -= DamageTaken;
+        currentHealth -= (int)(DamageTaken * (1 - (1 / enemyStats.Resistance)));
         Instantiate(blood, transform.position, transform.rotation);
         if (currentHealth <= 0)
         {
@@ -63,7 +65,7 @@ public class MeleeEnemy : MonoBehaviour {
             if (clock == 0)
             {
                 GetComponent<Animator>().SetTrigger("Attack");
-                playerhealth.TakeDamage(DamageDealt);
+                playerhealth.TakeDamage(enemyStats.MeleePower);
                 clock += Time.deltaTime;
                 body.AddForce(-body.velocity);
             }

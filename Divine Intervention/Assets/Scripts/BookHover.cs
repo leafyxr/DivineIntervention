@@ -8,9 +8,10 @@ public class BookHover : MonoBehaviour {
     Vector2 tempPos = new Vector2();
     public float hoverAmplitude = 0.5f;
     public float hoverFrequency = 1f;
-    private float speed = 2;
+    private float speed;
     void Start()
     {
+        speed = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().Playerstats.Speed + 1;
     }
     // Update is called once per frame
     void Update()

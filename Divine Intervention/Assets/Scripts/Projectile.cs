@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public int Damage = 1;
+    private int Damage;
     [SerializeField]
     private GameObject Explosion;
+    private void Start()
+    {
+        Damage = FindObjectOfType<PlayerController>().Playerstats.RangedPower;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Destructable"))
@@ -20,6 +24,7 @@ public class Projectile : MonoBehaviour {
             if (collision.gameObject.GetComponent<MeleeEnemy>().takeDamage(Damage))
             {
                 Debug.Log("Enemy Killed");
+                FindObjectOfType<PlayerController>().addScore(1);
             }
             Destroy(gameObject);
         }

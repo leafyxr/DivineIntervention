@@ -9,8 +9,12 @@ public class FireProjectile : MonoBehaviour {
     private GameObject projectile;
     [SerializeField]
     private ManaBar mana;
-    public int manaUsed = 10;
+    private int manaUsed;
     private float clock = 0;
+    private void Start()
+    {
+        manaUsed = FindObjectOfType<PlayerController>().Playerstats.MagicUse;
+    }
     void Update () {
         if (clock != 0)
         {
