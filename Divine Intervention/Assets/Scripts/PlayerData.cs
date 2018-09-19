@@ -5,7 +5,11 @@ using UnityEngine;
 public class PlayerData { 
     public Stats PlayerStats;
     public int Gold=0;
-    public int Progression=0;
+    public int Progression = 0;
+    public int ArmourRank = 0;
+    public int WeaponRank = 0;
+    public int MagicRank = 0;
+    public int ManaRank = 0;
 
     public PlayerData()
     {

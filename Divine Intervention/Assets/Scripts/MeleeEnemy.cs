@@ -48,7 +48,7 @@ public class MeleeEnemy : MonoBehaviour {
 
     public bool takeDamage(int DamageTaken)
     {
-        currentHealth -= (int)(DamageTaken * (1 - (1 / enemyStats.Resistance)));
+        currentHealth -= (int)(DamageTaken * (1 - (enemyStats.Resistance/100)));
         Instantiate(blood, transform.position, transform.rotation);
         if (currentHealth <= 0)
         {

@@ -17,8 +17,10 @@ public class PlayerController : MonoBehaviour {
     [SerializeField]
     public Stats Playerstats;
     public int ManaGain = 10;
-	// Use this for initialization
-	void Start () {
+    [SerializeField]
+    private DataManager dataManager;
+    // Use this for initialization
+    void Start () {
         Time.timeScale = 1;
         playerBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour {
         {
             menu.SetActive(false);
         }
+        Playerstats = dataManager.data.PlayerStats;
 	}
 
     // Update is called once per frame

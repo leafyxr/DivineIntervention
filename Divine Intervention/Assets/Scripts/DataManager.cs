@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.SceneManagement;
 
 public class DataManager : MonoBehaviour {
     public PlayerData data;
@@ -45,6 +46,12 @@ public class DataManager : MonoBehaviour {
         file.Close();
         Debug.Log("Game Saved");
         return;
+    }
+
+    public void deleteData()
+    {
+        File.Delete(Application.persistentDataPath + "/save.dat");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }

@@ -38,8 +38,9 @@ public class HealthBar : MonoBehaviour {
         }
         else
         {
-            currentHealth -= (int)(DamageTaken*(1-(1/playerStats.Resistance)));
+            currentHealth -= (int)(DamageTaken*(1-(playerStats.Resistance/100)));
         }
+        playerStats.Health = currentHealth;
     }
 
     public void regenHealth(int HealthGain)
@@ -49,5 +50,6 @@ public class HealthBar : MonoBehaviour {
         {
             currentHealth = playerStats.Health;
         }
+        playerStats.Health = currentHealth;
     }
 }
