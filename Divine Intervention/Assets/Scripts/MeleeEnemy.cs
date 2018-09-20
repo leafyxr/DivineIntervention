@@ -52,6 +52,17 @@ public class MeleeEnemy : MonoBehaviour {
         Instantiate(blood, transform.position, transform.rotation);
         if (currentHealth <= 0)
         {
+            CalculateDrops loot;
+            if (loot = GetComponent<CalculateDrops>()){
+                Debug.Log("Dropping...");
+                loot.DropItems();
+            }
+            GoldDrop gold;
+            if (gold = GetComponent<GoldDrop>())
+            {
+                Debug.Log("Dropping...");
+                gold.dropGold();
+            }
             GetComponent<DestroyObject>().destroy();
             return true;
         }

@@ -22,9 +22,12 @@ GameObject:
   - component: {fileID: 212509907580536040}
   - component: {fileID: 50557262902241900}
   - component: {fileID: 61550745891064420}
+  - component: {fileID: 114092507114257882}
+  - component: {fileID: 114871262934446104}
+  - component: {fileID: 114668360512052926}
   m_Layer: 0
   m_Name: Crate
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,6 +90,60 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75647354, y: 0.7534144}
   m_EdgeRadius: 0
+--- !u!114 &114092507114257882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1216620105702390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1b74da94334bf4bbaf2c0a8288a139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRandom: 1
+  maxRandValue: 10
+  minRandValue: 0
+  defaultValue: 50
+  gold: {fileID: 1936269384643618, guid: f1faf76406b5fb843ad2705fff98e576, type: 2}
+  spawnRangeMin: 0.3
+  spawnRangeMax: 0.3
+--- !u!114 &114668360512052926
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1216620105702390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8552675276fe9f74aa7feb0487c49702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeDelay: 0.1
+  collision: {fileID: 61550745891064420}
+--- !u!114 &114871262934446104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1216620105702390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8be57bad09abd2439a7fc8b91c8d311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Drops:
+  - Item: {fileID: 1216387466958050, guid: 06f60eb59ddd96d418d73a467c99cda5, type: 2}
+    spawnChance: 0.4
+    maxSpawns: 1
+  - Item: {fileID: 1769153434592450, guid: 0206410aa9b596344a7dc228bcaa1214, type: 2}
+    spawnChance: 0.25
+    maxSpawns: 1
+  - Item: {fileID: 1121808663255672, guid: bb9bcb283e21a0743ba792983d2505ba, type: 2}
+    spawnChance: 0.05
+    maxSpawns: 1
+  spawnRangeMin: 0.3
+  spawnRangeMax: 0.3
 --- !u!212 &212509907580536040
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -102,7 +159,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 6ebc531ee5afa024a8ad8d4768a7a2e5, type: 2}
+  - {fileID: 2100000, guid: bdca385a7da9b69459f3887a8379d1c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

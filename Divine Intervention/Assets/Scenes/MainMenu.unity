@@ -3501,7 +3501,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -324, y: -0.0000066757}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 100, y: 93.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &914752859
 MonoBehaviour:
@@ -3515,14 +3515,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.25, g: 0.74904394, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300002, guid: 93ac088ee027f934cb8da1deb42d4e53, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 2d2fb7314e439ed41b9240b7fe4058da, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3992,7 +3992,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 195bd703042b33240b5c8bfca7f3b1ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1506c518c4d2a9e4aa648b7bf589e811, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4566,12 +4566,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadScene: Grasslands
-  titleScreen: {fileID: 897997520}
   Main: {fileID: 343879378}
   Blacksmith: {fileID: 1584390614}
   Church: {fileID: 1937819740}
   Settings: {fileID: 1923468870}
-  showtitle: 1
   GoldCount: {fileID: 1832565844}
 --- !u!114 &1165922017
 MonoBehaviour:

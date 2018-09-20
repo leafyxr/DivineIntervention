@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 58073188116129794}
   - component: {fileID: 114967098180254014}
   - component: {fileID: 114461151142150162}
+  - component: {fileID: 114569300561549088}
+  - component: {fileID: 114849113215044848}
   m_Layer: 0
   m_Name: Demon
   m_TagString: Enemy
@@ -112,16 +114,57 @@ MonoBehaviour:
   playerhealth: {fileID: 0}
   enemyStats:
     Name: Lesser Demon
-    MeleePower: 5
+    MeleePower: 20
     RangedPower: 0
-    Health: 20
+    Health: 200
     Magic: 0
     MagicUse: 0
-    Resistance: 10
+    Resistance: 0
     Speed: 1.8
   blood: {fileID: 1554518794558926, guid: fe48d4ccf9863db41b1967b5be0cbf78, type: 2}
-  attackDelay: 1
+  attackDelay: 2
   FollowDistance: 5
+--- !u!114 &114569300561549088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1073044376243238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8be57bad09abd2439a7fc8b91c8d311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Drops:
+  - Item: {fileID: 1216387466958050, guid: 06f60eb59ddd96d418d73a467c99cda5, type: 2}
+    spawnChance: 0.4
+    maxSpawns: 1
+  - Item: {fileID: 1769153434592450, guid: 0206410aa9b596344a7dc228bcaa1214, type: 2}
+    spawnChance: 0.25
+    maxSpawns: 1
+  - Item: {fileID: 1121808663255672, guid: bb9bcb283e21a0743ba792983d2505ba, type: 2}
+    spawnChance: 0.05
+    maxSpawns: 1
+  spawnRangeMin: 0.5
+  spawnRangeMax: 0.5
+--- !u!114 &114849113215044848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1073044376243238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1b74da94334bf4bbaf2c0a8288a139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRandom: 1
+  maxRandValue: 100
+  minRandValue: 10
+  defaultValue: 50
+  gold: {fileID: 1936269384643618, guid: f1faf76406b5fb843ad2705fff98e576, type: 2}
+  spawnRangeMin: 0.5
+  spawnRangeMax: 0.5
 --- !u!114 &114967098180254014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -150,7 +193,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bdca385a7da9b69459f3887a8379d1c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
